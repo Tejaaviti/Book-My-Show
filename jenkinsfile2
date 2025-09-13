@@ -10,7 +10,7 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
         DOCKER_IMAGE = 'teja0911/bms:latest'
-        EKS_CLUSTER_NAME = 'Teja-eks'
+        EKS_CLUSTER_NAME = 'Teja-eks-cluster1'
         AWS_REGION = 'ap-south-1'
     }
 
@@ -26,7 +26,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Tejaaviti/Book-My-Show.git'
                 sh 'ls -la'  // Verify files after checkout
             }
-[O        }
+        }
 
         stage('SonarQube Analysis') {
             steps {
